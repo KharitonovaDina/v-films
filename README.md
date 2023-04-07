@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # v-films
 
 ## Project setup
@@ -22,3 +23,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# v-films
+>>>>>>> 5cf92e9 (Initial commit)
