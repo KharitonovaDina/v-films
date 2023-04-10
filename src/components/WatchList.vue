@@ -4,7 +4,6 @@
     <v-card-title></v-card-title>
     <v-card-text></v-card-text>
     <v-card-text></v-card-text>
-    <v-checkbox indeterminate=$checkboxIndeterminate color="green"></v-checkbox>
   </v-card>
 </template>
 
