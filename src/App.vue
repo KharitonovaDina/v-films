@@ -10,8 +10,6 @@
 </template>
 
 <script>
-/* eslint-disable linebreak-style */
-
 import NavBar from '@/components/NavBar.vue';
 import HeaderBar from '@/components/HeaderBar.vue';
 import WatchList from '@/components/WatchList.vue';

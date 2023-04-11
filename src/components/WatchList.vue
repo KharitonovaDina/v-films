@@ -2,9 +2,9 @@
   <v-navigation-drawer
     class="watch-list"
     app
+    tag="aside"
     right
     width="370">
-    <UserCard/>
     <h3 class="watch-list__title">Watch List</h3>
     <v-list>
       <v-list-item
@@ -13,6 +13,7 @@
         class="watch-list__episode"
       >
         <EpisodeCard
+          :poster="item.poster"
           :series=item.series
           :season=item.season
           :episode=item.episode
@@ -27,13 +28,11 @@
 
 <script>
 import EpisodeCard from '@/components/EpisodeCard.vue';
-import UserCard from '@/components/UserCard.vue';
 import PrimaryBtn from '@/components/PrimaryBtn.vue';
 
 export default {
   name: 'WatchList',
   components: {
-    UserCard,
     EpisodeCard,
     PrimaryBtn,
   },
@@ -41,36 +40,42 @@ export default {
     return {
       cards: [
         {
+          poster: '/tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',
           title: 'Utopia',
         },
         {
+          poster: '/tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',
           title: 'Utopia',
         },
         {
+          poster: '/tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',
           title: 'Utopia',
         },
         {
+          poster: '/tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',
           title: 'Utopia',
         },
         {
+          poster: '/tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',
           title: 'Utopia',
         },
         {
+          poster: '/tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',

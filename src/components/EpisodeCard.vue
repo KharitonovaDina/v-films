@@ -1,6 +1,6 @@
 <template>
   <v-card class="episode-card">
-    <img src="/tmp-7.jpg" alt="" class="episode-card__img">
+    <img :src=poster alt="" class="episode-card__img">
     <v-container class="reset episode-card__description">
       <v-card-title class="reset"> {{ series }} </v-card-title>
       <v-card-text class="reset episode-card__episode">S{{ season }} | E{{ episode }}</v-card-text>
@@ -15,11 +15,11 @@
 <script>
 export default {
   name: 'EpisodeCard',
-  props: ['series', 'season', 'episode', 'title'],
+  props: ['poster', 'series', 'season', 'episode', 'title'],
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .episode-card {
     display: flex;
     align-items: center;
@@ -40,11 +40,15 @@ export default {
     padding: 0 16px;
   }
   .episode-card__episode {
-    color: green;
+    color: orangered;
     font-weight: 700;
   }
   .episode-card__btn {
     color: grey;
     background-color: white;
+
+    &:hover {
+      color: orangered;
+     }
   }
 </style>

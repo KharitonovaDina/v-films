@@ -1,8 +1,9 @@
 <template>
   <v-navigation-drawer
+    class="nav-bar"
     tag="nav"
     app
-    class="nav-bar"
+    width="300px"
   >
     <router-link class="nav-bar__logo" to="/"> Filmoteka </router-link>
     <v-list>
@@ -20,16 +21,18 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-    <PrimaryBtn class="nav-bar__login-btn" title="Login"/>
+    <UserCard v-if="auth"/>
+    <PrimaryBtn v-else class="nav-bar__login-btn" title="Login"/>
   </v-navigation-drawer>
 </template>
 
 <script>
 import PrimaryBtn from '@/components/PrimaryBtn.vue';
+import UserCard from '@/components/UserCard.vue';
 
 export default {
   name: 'NavBar',
-  components: { PrimaryBtn },
+  components: { UserCard, PrimaryBtn },
   data() {
     return {
       items: [
@@ -49,6 +52,7 @@ export default {
           route: '/series',
         },
       ],
+      auth: true,
     };
   },
 };
@@ -57,9 +61,11 @@ export default {
 <style scoped>
   .nav-bar {
     padding: 16px;
-    display: flex;
-    align-items: center;
   }
+  /* {*/
+  /*  display: flex;*/
+  /*  justify-content: space-between;*/
+  /*}*/
   .nav-bar__logo {
     text-transform: uppercase;
     text-decoration: none;

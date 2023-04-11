@@ -1,12 +1,15 @@
 <template>
   <v-card flat class="user-card">
     <v-avatar class="user-card__avatar">
-      <img src="/avatar.jpg" alt="avatar">
+      <img :src=avatar alt="avatar">
     </v-avatar>
     <div>
-      <v-card-title class="pa-0"> {{ name }} </v-card-title>
-      <v-card-text class="pa-0"> {{ email }} </v-card-text>
+      <v-card-text class="user-card__name"> {{ name }} </v-card-text>
+      <v-card-text class="user-card__email"> {{ email }} </v-card-text>
     </div>
+    <v-btn class="user-card__logout-btn" icon>
+      <v-icon>mdi-arrow-right</v-icon>
+    </v-btn>
   </v-card>
 </template>
 
@@ -15,21 +18,38 @@ export default {
   name: 'UserCard',
   data() {
     return {
-      avatar: '',
-      name: 'Kharitonova Dina',
+      avatar: '/avatar.jpg',
+      name: 'Dina Kharitonova',
       email: 'd.i.haritonova@yandex.ru',
     };
   },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .user-card {
     display: flex;
+    align-items: center;
+    /*justify-content: space-between;*/
     margin-bottom: 24px;
   }
   .user-card__avatar {
-    margin-right: 16px;
+    margin-right: 12px;
   }
+  .user-card__name {
+    padding: 0;
+    font-size: 16px;
+  }
+  .user-card__email {
+    padding: 0;
+    font-size: 12px;
+  }
+  .user-card__logout-btn {
+    margin-left: 8px;
 
+    &:hover {
+      color: orangered;
+      transform: translateX(20%);
+     }
+  }
 </style>
