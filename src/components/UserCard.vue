@@ -1,6 +1,6 @@
 <template>
   <v-card flat class="user-card">
-    <v-avatar>
+    <v-avatar class="user-card__avatar">
       <img src="/avatar.jpg" alt="avatar">
     </v-avatar>
     <div>
@@ -26,6 +26,10 @@ export default {
 <style scoped>
   .user-card {
     display: flex;
+    margin-bottom: 24px;
+  }
+  .user-card__avatar {
+    margin-right: 16px;
   }
 
 </style>

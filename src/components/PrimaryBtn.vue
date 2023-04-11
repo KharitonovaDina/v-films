@@ -1,10 +1,11 @@
 <template>
-  <v-btn>
+  <v-btn class="primary-btn">
     {{ title }}
   </v-btn>
 </template>
 
 <script>
+// eslint-disable-next-line
 export default {
   name: 'PrimaryBtn',
   props: ['title'],
@@ -12,5 +13,8 @@ export default {
 </script>
 
 <style scoped>
-
+  .v-btn.primary-btn {
+    color: white;
+    background-color: orangered;
+  }
 </style>

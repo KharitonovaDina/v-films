@@ -2,8 +2,9 @@
   <v-navigation-drawer
     tag="nav"
     app
+    class="nav-bar"
   >
-    <router-link to="/"> Filmoteka </router-link>
+    <router-link class="nav-bar__logo" to="/"> Filmoteka </router-link>
     <v-list>
       <v-list-item
         v-for="item in items"
@@ -19,7 +20,7 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
-    <PrimaryBtn title="Login"/>
+    <PrimaryBtn class="nav-bar__login-btn" title="Login"/>
   </v-navigation-drawer>
 </template>
 
@@ -54,5 +55,19 @@ export default {
 </script>
 
 <style scoped>
-
+  .nav-bar {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+  }
+  .nav-bar__logo {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    font-size: 32px;
+  }
+  .nav-bar__login-btn {
+    width: 100%;
+  }
 </style>

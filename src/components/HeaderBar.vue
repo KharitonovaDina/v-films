@@ -5,17 +5,15 @@
     color="transparent"
   >
     <SearchBar/>
-    <UserCard/>
   </v-app-bar>
 </template>
 
 <script>
 import SearchBar from '@/components/SearchForm.vue';
-import UserCard from '@/components/UserCard.vue';
 
 export default {
   name: 'HeaderBar',
-  components: { UserCard, SearchBar },
+  components: { SearchBar },
 };
 </script>
 
