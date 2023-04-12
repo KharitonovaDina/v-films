@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import EpisodeCard from '@/components/WatchList/EpisodeCard.vue';
+import EpisodeCard from '@/components/EpisodeCard.vue';
 import PrimaryBtn from '@/components/PrimaryBtn.vue';
 
 export default {

@@ -1,13 +1,25 @@
 <template>
   <v-card class="hero-card">
-    <img class="hero-card__img" src="../assets/img/tmp/hero.jpg" alt="">
-    <v-card-text class="black--text">Supernatural</v-card-text>
+<!--    <img class="hero-card__img" :src=value.poster alt="">-->
+    <div class="hero-card__info">
+      <v-card-title class="black--text">{{ value.title }}</v-card-title>
+      <v-card-text>{{ value.description }}</v-card-text>
+      <div class="hero-card__btn-wrap">
+        <PrimaryBtn title="Watch now"/>
+        <AddBtn/>
+      </div>
+    </div>
   </v-card>
 </template>
 
 <script>
+import PrimaryBtn from '@/components/PrimaryBtn.vue';
+import AddBtn from '@/components/AddBtn.vue';
+
 export default {
   name: 'HeroCard',
+  components: { AddBtn, PrimaryBtn },
+  props: ['value'],
 };
 </script>
 
@@ -23,5 +35,12 @@ export default {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+  }
+  .hero-card__info {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-card__btn-wrap {
+    display: flex;
   }
 </style>

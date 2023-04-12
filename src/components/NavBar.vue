@@ -39,7 +39,7 @@
 
 <script>
 import PrimaryBtn from '@/components/PrimaryBtn.vue';
-import UserCard from '@/components/NavBar/UserCard.vue';
+import UserCard from '@/components/UserCard.vue';
 
 export default {
   name: 'NavBar',

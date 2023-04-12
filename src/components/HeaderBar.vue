@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import SearchForm from '@/components/Header/SearchForm.vue';
+import SearchForm from '@/components/SearchForm.vue';
 
 export default {
   name: 'HeaderBar',
