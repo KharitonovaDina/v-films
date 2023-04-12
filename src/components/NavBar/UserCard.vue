@@ -30,8 +30,6 @@ export default {
   .user-card {
     display: flex;
     align-items: center;
-    /*justify-content: space-between;*/
-    margin-bottom: 24px;
   }
   .user-card__avatar {
     margin-right: 12px;

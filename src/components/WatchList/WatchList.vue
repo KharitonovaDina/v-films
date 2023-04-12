@@ -4,7 +4,7 @@
     app
     tag="aside"
     right
-    width="370">
+    width="400">
     <h3 class="watch-list__title">Watch List</h3>
     <v-list>
       <v-list-item
@@ -13,13 +13,8 @@
         class="watch-list__episode"
       >
         <EpisodeCard
-          :poster="item.poster"
-          :series=item.series
-          :season=item.season
-          :episode=item.episode
-          :title=item.title
-        >
-        </EpisodeCard>
+          :value="item"
+        />
       </v-list-item>
     </v-list>
     <PrimaryBtn title="See more"/>
@@ -27,7 +22,7 @@
 </template>
 
 <script>
-import EpisodeCard from '@/components/EpisodeCard.vue';
+import EpisodeCard from '@/components/WatchList/EpisodeCard.vue';
 import PrimaryBtn from '@/components/PrimaryBtn.vue';
 
 export default {
@@ -48,7 +43,7 @@ export default {
         },
         {
           poster: '/tmp-7.jpg',
-          series: 'Doctor who?',
+          series: 'Doctor no who?',
           season: '01',
           episode: '03',
           title: 'Utopia',

@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue';
-import HeaderBar from '@/components/HeaderBar.vue';
-import WatchList from '@/components/WatchList.vue';
+import NavBar from '@/components/NavBar/NavBar.vue';
+import HeaderBar from '@/components/Header/HeaderBar.vue';
+import WatchList from '@/components/WatchList/WatchList.vue';
 
 export default {
   name: 'App',

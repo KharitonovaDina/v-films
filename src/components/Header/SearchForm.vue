@@ -13,9 +13,9 @@
       flat
       hide-no-data
       hide-details
-      label="What state are you from?"
+      label="Search"
       solo-inverted
-    ></v-autocomplete>
+    />
     <PrimaryBtn title="Search"/>
   </v-form>
 </template>
@@ -66,5 +66,10 @@ export default {
   .search-form {
     display: flex;
     align-items: center;
+    height: 100%;
+  }
+  .search-form__input {
+    width: 500px;
+    margin-right: 24px;
   }
 </style>

@@ -1,10 +1,14 @@
 <template>
   <v-card class="episode-card">
-    <img :src=poster alt="" class="episode-card__img">
+    <img :src=value.poster alt="" class="episode-card__img">
     <v-container class="reset episode-card__description">
-      <v-card-title class="reset"> {{ series }} </v-card-title>
-      <v-card-text class="reset episode-card__episode">S{{ season }} | E{{ episode }}</v-card-text>
-      <v-card-text class="reset"> {{title}} </v-card-text>
+      <v-card-title class="reset"> {{ value.series }} </v-card-title>
+      <v-card-text
+        class="reset episode-card__episode"
+      >
+        S{{ value.season }} | E{{ value.episode }}
+      </v-card-text>
+      <v-card-text class="reset"> {{value.title}} </v-card-text>
     </v-container>
     <v-btn small fab outlined class="episode-card__btn">
       <v-icon>mdi-check</v-icon>
@@ -15,7 +19,7 @@
 <script>
 export default {
   name: 'EpisodeCard',
-  props: ['poster', 'series', 'season', 'episode', 'title'],
+  props: ['value'],
 };
 </script>
 
