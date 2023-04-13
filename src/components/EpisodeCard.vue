@@ -1,6 +1,6 @@
 <template>
   <v-card class="episode-card">
-    <img :src=value.poster alt="" class="episode-card__img">
+    <img :src="require(`@/assets/img/tmp/${value.poster}`)" alt="" class="episode-card__img">
     <v-container class="reset episode-card__description">
       <v-card-title class="reset"> {{ value.series }} </v-card-title>
       <v-card-text

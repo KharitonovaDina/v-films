@@ -1,8 +1,14 @@
 <template>
-  <v-carousel>
+  <v-carousel
+    :show-arrows="false"
+    cycle
+    interval="100000"
+    hide-delimiter-background
+    delimiter-icon="mdi-minus"
+  >
     <v-carousel-item
-      v-for="item in slides"
-      :key="item.title"
+      v-for="(item, i) in slides"
+      :key="i"
     >
       <HeroCard :value="item"/>
     </v-carousel-item>
@@ -19,19 +25,19 @@ export default {
     return {
       slides: [
         {
-          poster: '../src/assets/img/tmp/hero.jpg',
-          title: 'Слайд 1',
-          description: 'Слайд 1',
+          poster: 'hero.jpg',
+          title: 'Supernatural',
+          description: 'Action, horror, comedy',
         },
         {
-          poster: '../src/assets/img/tmp/hero.jpg',
-          title: 'Слайд 2',
-          description: 'Слайд 2',
+          poster: 'hero.jpg',
+          title: 'Supernatural',
+          description: 'Action, horror, comedy',
         },
         {
-          poster: '../src/assets/img/tmp/hero.jpg',
-          title: 'Слайд 3',
-          description: 'Слайд 3',
+          poster: 'hero.jpg',
+          title: 'Supernatural',
+          description: 'Action, horror, comedy',
         },
       ],
     };

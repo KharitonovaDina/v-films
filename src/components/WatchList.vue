@@ -8,8 +8,8 @@
     <h3 class="watch-list__title">Watch List</h3>
     <v-list>
       <v-list-item
-        v-for="item in cards"
-        :key="item.series"
+        v-for="(item,i) in cards"
+        :key="i"
         class="watch-list__episode"
       >
         <EpisodeCard
@@ -35,42 +35,42 @@ export default {
     return {
       cards: [
         {
-          poster: '/tmp-7.jpg',
+          poster: 'tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',
           title: 'Utopia',
         },
         {
-          poster: '/tmp-7.jpg',
+          poster: 'tmp-7.jpg',
           series: 'Doctor no who?',
           season: '01',
           episode: '03',
           title: 'Utopia',
         },
         {
-          poster: '/tmp-7.jpg',
+          poster: 'tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',
           title: 'Utopia',
         },
         {
-          poster: '/tmp-7.jpg',
+          poster: 'tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',
           title: 'Utopia',
         },
         {
-          poster: '/tmp-7.jpg',
+          poster: 'tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',
           title: 'Utopia',
         },
         {
-          poster: '/tmp-7.jpg',
+          poster: 'tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',

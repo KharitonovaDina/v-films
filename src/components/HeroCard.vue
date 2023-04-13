@@ -1,12 +1,14 @@
 <template>
   <v-card class="hero-card">
-<!--    <img class="hero-card__img" :src=value.poster alt="">-->
+    <div class="hero-card__img-wrap">
+      <img class="hero-card__img" :src="require(`@/assets/img/tmp/${value.poster}`)" alt="">
+    </div>
     <div class="hero-card__info">
-      <v-card-title class="black--text">{{ value.title }}</v-card-title>
-      <v-card-text>{{ value.description }}</v-card-text>
+      <v-card-title class="hero-card__title">{{ value.title }}</v-card-title>
+      <v-card-text class="hero-card__description">{{ value.description }}</v-card-text>
       <div class="hero-card__btn-wrap">
-        <PrimaryBtn title="Watch now"/>
-        <AddBtn/>
+        <PrimaryBtn class="hero-card__btn" title="Watch now"/>
+        <AddBtn class="hero-card__add-btn"/>
       </div>
     </div>
   </v-card>
@@ -23,24 +25,62 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .hero-card {
     position: relative;
     width: 100%;
-    height: 450px;
+    height: 100%;
     overflow: hidden;
+  }
+  .hero-card__img-wrap {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      opacity: 0.2;
+      //z-index: 100;
+    }
   }
   .hero-card__img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: -1;
   }
   .hero-card__info {
+    position: absolute;
     display: flex;
     flex-direction: column;
+    top: 50%;
+    left: 100px;
+  }
+  .hero-card__title {
+    text-transform: uppercase;
+    color: white;
+    font-size: 36px;
+    margin-bottom: 12px;
+    padding: 0;
+  }
+  .hero-card__description {
+    color:white;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 20px;
+    padding: 0;
   }
   .hero-card__btn-wrap {
     display: flex;
+  }
+  .hero-card__btn {
+    margin-right: 10px;
+  }
+  .v-btn.hero-card__add-btn {
+    padding: 0;
+    height: 36px;
+    min-width: 36px;
   }
 </style>

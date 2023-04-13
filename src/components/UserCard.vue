@@ -1,7 +1,7 @@
 <template>
   <v-card flat class="user-card">
     <v-avatar class="user-card__avatar">
-      <img :src=avatar alt="avatar">
+      <img :src="require(`@/assets/img/tmp/${avatar}`)" alt="avatar">
     </v-avatar>
     <div>
       <v-card-text class="user-card__name"> {{ name }} </v-card-text>
@@ -18,7 +18,7 @@ export default {
   name: 'UserCard',
   data() {
     return {
-      avatar: '/avatar.jpg',
+      avatar: 'avatar.jpg',
       name: 'Dina Kharitonova',
       email: 'd.i.haritonova@yandex.ru',
     };
