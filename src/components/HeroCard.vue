@@ -8,7 +8,7 @@
       <v-card-text class="hero-card__description">{{ value.description }}</v-card-text>
       <div class="hero-card__btn-wrap">
         <PrimaryBtn class="hero-card__btn" title="Watch now"/>
-        <AddBtn class="hero-card__add-btn"/>
+        <AddBtn/>
       </div>
     </div>
   </v-card>
@@ -44,7 +44,6 @@ export default {
       height: 100%;
       background-color: black;
       opacity: 0.2;
-      //z-index: 100;
     }
   }
   .hero-card__img {
@@ -55,7 +54,7 @@ export default {
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 50%;
+    top: 60%;
     left: 100px;
   }
   .hero-card__title {
@@ -77,10 +76,5 @@ export default {
   }
   .hero-card__btn {
     margin-right: 10px;
-  }
-  .v-btn.hero-card__add-btn {
-    padding: 0;
-    height: 36px;
-    min-width: 36px;
   }
 </style>

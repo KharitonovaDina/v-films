@@ -19,6 +19,8 @@
             v-for="item in items"
             :key="item.title"
             router :to="item.route"
+            class="nav-bar__menu-item"
+            exact-active-class="nav-bar__menu-item_active"
           >
             <v-list-item-icon>
               <v-icon> {{ item.icon }} </v-icon>
@@ -69,7 +71,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .nav-bar {
     padding: 16px 16px 36px;
   }
@@ -99,5 +101,14 @@ export default {
   }
   .nav-bar__login-btn {
     width: 100%;
+  }
+  .nav-bar__menu-item:hover {
+   background-color: white;
+  }
+  .nav-bar__menu-item_active {
+    color: tomato;
+    &:before {
+      display: none;
+    }
   }
 </style>

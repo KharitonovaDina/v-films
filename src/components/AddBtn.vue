@@ -1,5 +1,5 @@
 <template>
-  <v-btn depressed>
+  <v-btn class="add-btn" depressed>
     <v-icon>mdi-plus</v-icon>
   </v-btn>
 </template>
@@ -11,5 +11,9 @@ export default {
 </script>
 
 <style scoped>
-
+  .v-btn.add-btn {
+    padding: 0;
+    height: 36px;
+    min-width: 36px;
+}
 </style>

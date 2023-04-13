@@ -1,5 +1,5 @@
 <template>
-  <v-btn class="primary-btn">
+  <v-btn depressed class="primary-btn">
     {{ title }}
   </v-btn>
 </template>
