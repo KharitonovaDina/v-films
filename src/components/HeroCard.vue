@@ -26,6 +26,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/variables.scss";
   .hero-card {
     position: relative;
     width: 100%;
@@ -42,7 +43,7 @@ export default {
       position: absolute;
       width: 100%;
       height: 100%;
-      background-color: black;
+      background-color: $bg-c;
       opacity: 0.2;
     }
   }
@@ -60,6 +61,7 @@ export default {
   .hero-card__title {
     text-transform: uppercase;
     color: white;
+    font-weight: 700;
     font-size: 36px;
     margin-bottom: 12px;
     padding: 0;

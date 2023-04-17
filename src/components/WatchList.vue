@@ -17,26 +17,26 @@
         />
       </v-list-item>
     </v-list>
-    <PrimaryBtn title="See more"/>
+<!--    <PrimaryBtn title="See more"/>-->
   </v-navigation-drawer>
 </template>
 
 <script>
 import EpisodeCard from '@/components/EpisodeCard.vue';
-import PrimaryBtn from '@/components/PrimaryBtn.vue';
+// import PrimaryBtn from '@/components/PrimaryBtn.vue';
 
 export default {
   name: 'WatchList',
   components: {
     EpisodeCard,
-    PrimaryBtn,
+    // PrimaryBtn,
   },
   data() {
     return {
       cards: [
         {
           poster: 'tmp-7.jpg',
-          series: 'Doctor who?',
+          series: 'Supernatural',
           season: '01',
           episode: '03',
           title: 'Utopia',
@@ -82,13 +82,17 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/assets/scss/variables.scss";
   .watch-list {
     padding: 16px;
+    background-color: $sidebar-c;
   }
   .watch-list__title {
     margin-bottom: 16px;
-    color: grey;
+    color: $font-c;
+    font-size: 24px;
+    font-weight: 700;
   }
   .watch-list__episode {
     margin-bottom: 16px;

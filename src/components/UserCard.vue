@@ -8,7 +8,7 @@
       <v-card-text class="user-card__email"> {{ email }} </v-card-text>
     </div>
     <v-btn class="user-card__logout-btn" icon>
-      <v-icon>mdi-arrow-right</v-icon>
+      <v-icon class="user-card__btn-icon">mdi-arrow-right</v-icon>
     </v-btn>
   </v-card>
 </template>
@@ -27,9 +27,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/variables.scss";
   .user-card {
     display: flex;
     align-items: center;
+    background-color: transparent;
+    color: $font-c;
   }
   .user-card__avatar {
     margin-right: 12px;
@@ -44,10 +47,15 @@ export default {
   }
   .user-card__logout-btn {
     margin-left: 8px;
-
     &:hover {
-      color: orangered;
       transform: translateX(20%);
-     }
+      color: $primary-c;
+    }
+    & .user-card__btn-icon {
+      color: $font-c;
+    }
+    &:hover .user-card__btn-icon {
+      color: $primary-c;
+    }
   }
 </style>

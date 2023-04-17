@@ -62,14 +62,15 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/assets/scss/variables.scss";
   .search-form {
     display: flex;
     align-items: center;
-    height: 100%;
   }
   .search-form__input {
     width: 500px;
     margin-right: 24px;
+    background-color: #DCDCDC;
   }
 </style>

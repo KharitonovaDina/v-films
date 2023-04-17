@@ -3,10 +3,15 @@
     class="header"
     app
     flat
+    hide-on-scroll
     color="transparent"
-    height="100%"
   >
-    <SearchForm/>
+    <div class="header__wrap">
+      <SearchForm/>
+      <v-btn icon>
+        <v-icon color="white">mdi-bell</v-icon>
+      </v-btn>
+    </div>
   </v-app-bar>
 </template>
 
@@ -19,10 +24,15 @@ export default {
 };
 </script>
 
-<style scoped>
-  .header {
+<style lang="scss" scoped>
+@import "@/assets/scss/variables.scss";
+  .v-toolbar>.v-toolbar__content {
+    padding: 0;
+  }
+  .header__wrap {
     display: flex;
     justify-content: space-between;
-    padding: 16px 40px;
+    align-items: center;
+    width: 100%;
   }
 </style>

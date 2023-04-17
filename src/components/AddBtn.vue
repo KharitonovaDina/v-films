@@ -10,10 +10,16 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/assets/scss/variables.scss";
   .v-btn.add-btn {
     padding: 0;
     height: 36px;
     min-width: 36px;
+    width: 36px;
+    background-color: $secondary-c;
+    &:hover {
+      color: $primary-c;
+    }
 }
 </style>

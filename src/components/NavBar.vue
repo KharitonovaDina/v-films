@@ -23,11 +23,11 @@
             exact-active-class="nav-bar__menu-item_active"
           >
             <v-list-item-icon>
-              <v-icon> {{ item.icon }} </v-icon>
+              <v-icon class="nav-bar__menu-icon"> {{ item.icon }} </v-icon>
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title> {{ item.title }} </v-list-item-title>
+              <v-list-item-title class="nav-bar__menu-title"> {{ item.title }} </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -60,7 +60,7 @@ export default {
           route: '/films',
         },
         {
-          title: 'Сериалы',
+          title: 'Series',
           icon: 'mdi-video-check',
           route: '/series',
         },
@@ -72,8 +72,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/variables.scss";
   .nav-bar {
     padding: 16px 16px 36px;
+    background-color: $sidebar-c;
   }
   .nav-bar__wrap {
     display: flex;
@@ -90,7 +92,8 @@ export default {
   .nav-bar__logo {
     text-transform: uppercase;
     text-decoration: none;
-    color: black;
+    font-family: $logo-f;
+    color: $font-c;
     font-weight: 700;
     font-size: 40px;
     margin-bottom: 24px;
@@ -102,13 +105,21 @@ export default {
   .nav-bar__login-btn {
     width: 100%;
   }
-  .nav-bar__menu-item:hover {
-   background-color: white;
+  .nav-bar__menu-icon,
+  .nav-bar__menu-title {
+    color: $font-c;
   }
-  .nav-bar__menu-item_active {
-    color: tomato;
+  .nav-bar__menu-item {
     &:before {
       display: none;
+    }
+    &_active .nav-bar__menu-icon,
+    &_active .nav-bar__menu-title {
+      color: $primary-c;
+    }
+    &:hover .nav-bar__menu-icon,
+    &:hover .nav-bar__menu-title {
+      color: $primary-c;
     }
   }
 </style>

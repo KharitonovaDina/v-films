@@ -1,6 +1,8 @@
 <template>
   <v-container class="home">
-    <HeroSlider/>
+    <HeroSlider class="home__hero-slider"/>
+    <MovieSlider/>
+    <MovieSlider/>
     <MovieSlider/>
   </v-container>
 </template>
@@ -18,5 +20,8 @@ export default {
 <style>
   .home {
     padding: 40px;
+  }
+  .home__hero-slider {
+    margin-bottom: 36px;
   }
 </style>

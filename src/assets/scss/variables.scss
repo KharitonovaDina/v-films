@@ -1,1 +1,26 @@
-$btn-border-radius: 20px !important;
+//Fonts
+$logo-f: 'Montserrat', serif;
+
+//Colors
+$primary-c: tomato;
+$secondary-c: #F8E0E1;
+$bg-c: #0E0505;
+$bg-c-40: rgba(14, 5, 5, 0.4);
+$sidebar-c: #1E1717;
+$font-c: #DCDCDC;
+
+$next: mdi-arrow;
+
+
+* {
+  font-family: "Luciano Display", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: $font-c;
+}
+main {
+  background-color: $bg-c;
+}
+
+
+
