@@ -1,5 +1,6 @@
 //Fonts
 $logo-f: 'Montserrat', serif;
+$primary-f: 'Luciano Display', sans-serif;
 
 //Colors
 $primary-c: tomato;
@@ -9,11 +10,11 @@ $bg-c-40: rgba(14, 5, 5, 0.4);
 $sidebar-c: #1E1717;
 $font-c: #DCDCDC;
 
-$next: mdi-arrow;
+$btn-border-radius: 50%;
 
 
 * {
-  font-family: "Luciano Display", sans-serif;
+  font-family: $primary-f;
   font-weight: 500;
   font-size: 16px;
   color: $font-c;

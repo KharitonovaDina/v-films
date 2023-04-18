@@ -8,8 +8,8 @@
   >
     <div class="header__wrap">
       <SearchForm/>
-      <v-btn icon>
-        <v-icon color="white">mdi-bell</v-icon>
+      <v-btn class="header__notification" icon>
+        <v-icon class="header__icon">mdi-bell</v-icon>
       </v-btn>
     </div>
   </v-app-bar>
@@ -25,14 +25,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
-  .v-toolbar>.v-toolbar__content {
-    padding: 0;
+  .header {
+    padding: 0 24px ;
   }
   .header__wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    height: 100%;
+  }
+  .header__notification {
+    & .header__icon {
+      color: $font-c;
+    }
+    &:hover .header__icon{
+      color: $primary-c;
+    }
   }
 </style>

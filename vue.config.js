@@ -4,11 +4,11 @@ module.exports = defineConfig({
   transpileDependencies: [
     'vuetify',
   ],
-  // css: {
-  //   loaderOptions: {
-  //     sass: {
-  //       additionalData: '@import "@/assets/scss/variables.scss";',
-  //     },
-  //   },
-  // },
+  css: {
+    loaderOptions: {
+      scss: {
+        additionalData: '@import "~@/assets/scss/variables.scss";',
+      },
+    },
+  },
 });

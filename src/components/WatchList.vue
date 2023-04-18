@@ -83,7 +83,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
   .watch-list {
     padding: 16px;
     background-color: $sidebar-c;

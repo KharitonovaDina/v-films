@@ -72,7 +72,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
   .nav-bar {
     padding: 16px 16px 36px;
     background-color: $sidebar-c;

@@ -1,7 +1,7 @@
 <template>
   <v-container class="movie-slider">
-    <h3 class="movie-slider__title"> Continue watch</h3>
-    <v-slide-group>
+    <h3 class="movie-slider__title"> {{ title }} </h3>
+    <v-slide-group dark>
       <v-slide-item
         v-for="(item,i) in movies"
         :key="i"
@@ -19,29 +19,44 @@ import MovieCard from '@/components/MovieCard.vue';
 export default {
   name: 'MovieSlider',
   components: { MovieCard },
+  props: ['title'],
   data() {
     return {
       movies: [
         {
           poster: 'tmp-4.jpg',
+          title: 'Game of thrones',
+          rating: '7.8',
         },
         {
           poster: 'tmp-4.jpg',
+          title: 'Game of thrones',
+          rating: '7.9',
         },
         {
           poster: 'tmp-4.jpg',
+          title: 'Game of thrones',
+          rating: '8.0',
         },
         {
           poster: 'tmp-4.jpg',
+          title: 'Game of thrones',
+          rating: '8.1',
         },
         {
           poster: 'tmp-4.jpg',
+          title: 'Game of thrones',
+          rating: '8.2',
         },
         {
           poster: 'tmp-4.jpg',
+          title: 'Game of thrones',
+          rating: '8.3',
         },
         {
           poster: 'tmp-4.jpg',
+          title: 'Game of thrones',
+          rating: '8.4',
         },
       ],
     };
@@ -50,7 +65,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "src/assets/scss/variables.scss";
   .movie-slider {
     display: flex;
     flex-direction: column;

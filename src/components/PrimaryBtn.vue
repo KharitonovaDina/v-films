@@ -11,9 +11,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .v-btn.primary-btn {
-    color: white;
-    background-color: orangered;
+    color: $font-c;
+    background-color: $primary-c;
+    text-transform: capitalize;
   }
 </style>

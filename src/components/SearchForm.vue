@@ -1,21 +1,19 @@
 <template>
   <v-form
-    ref="searchForm"
     class="search-form"
   >
-    <v-autocomplete
-      class="search-form__input"
-      v-model="select"
-      :loading="loading"
-      :items="items"
-      :search-input.sync="search"
-      cache-items
-      flat
-      hide-no-data
-      hide-details
-      label="Search"
-      solo-inverted
-    />
+    <div class="search-form__input">
+      <v-autocomplete
+        color="white"
+        hide-no-data
+        hide-selected
+        hide-details
+        label="Search"
+        solo
+        return-object
+        prepend-inner-icon="mdi-magnify"
+      />
+    </div>
     <PrimaryBtn title="Search"/>
   </v-form>
 </template>
@@ -28,49 +26,20 @@ export default {
   components: { PrimaryBtn },
   data() {
     return {
-      loading: false,
-      items: [],
-      search: null,
-      select: null,
-      states: [
-        'Alabama',
-        'Alaska',
-        'American Samoa',
-        'Arizona',
-        'Arkansas',
-        'California',
-      ],
     };
   },
-  // watch: {
-  //   search(val) {
-  //     val && val !== this.select && this.querySelections(val);
-  //   },
-  // },
-  // methods: {
-  //   querySelections(v) {
-  //     this.loading = true;
-  //     // Simulated ajax query
-  //     setTimeout(() => {
-  //       this.items = this.states.filter(e => {
-  //         return (e || '').toLowerCase().indexOf((v || '').toLowerCase()) > -1;
-  //       });
-  //       this.loading = false;
-  //     }, 500);
-  //   },
-  // },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
   .search-form {
     display: flex;
     align-items: center;
   }
   .search-form__input {
     width: 500px;
+    height: 36px;
     margin-right: 24px;
-    background-color: #DCDCDC;
+    background-color: $font-c;
   }
 </style>
