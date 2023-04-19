@@ -1,14 +1,16 @@
 <template>
   <v-card flat class="user-card">
-    <v-avatar class="user-card__avatar">
-      <img :src="require(`@/assets/img/tmp/${avatar}`)" alt="avatar">
-    </v-avatar>
-    <div>
-      <v-card-text class="user-card__name"> {{ name }} </v-card-text>
-      <v-card-text class="user-card__email"> {{ email }} </v-card-text>
+    <div class="user-card__wrap">
+      <v-avatar class="user-card__avatar">
+        <img :src="require(`@/assets/img/tmp/${avatar}`)" alt="avatar">
+      </v-avatar>
+      <div>
+        <v-card-text class="user-card__name"> {{ name }} </v-card-text>
+        <v-card-text class="user-card__email"> {{ email }} </v-card-text>
+      </div>
     </div>
-    <v-btn class="user-card__logout-btn" icon>
-      <v-icon class="user-card__btn-icon">mdi-arrow-right</v-icon>
+    <v-btn class="user-card__logout-btn" icon @click="$emit('logout')">
+      <v-icon class="user-card__btn-icon">mdi-dots-vertical</v-icon>
     </v-btn>
   </v-card>
 </template>
@@ -31,7 +33,12 @@ export default {
     display: flex;
     align-items: center;
     background-color: transparent;
+    justify-content: space-between;
     color: $font-c;
+  }
+  .user-card__wrap {
+    display: flex;
+    justify-content: start;
   }
   .user-card__avatar {
     margin-right: 12px;
@@ -47,7 +54,6 @@ export default {
   .user-card__logout-btn {
     margin-left: 8px;
     &:hover {
-      transform: translateX(20%);
       color: $primary-c;
     }
     & .user-card__btn-icon {

@@ -7,13 +7,6 @@
   >
     <div class="nav-bar__wrap">
       <div class="nav-bar__inner">
-        <router-link
-          class="nav-bar__logo"
-          to="/"
-        >
-          Filmoteka
-        </router-link>
-
         <v-list class="nav-bar__menu">
           <v-list-item
             v-for="item in items"
@@ -88,20 +81,7 @@ export default {
     flex-direction: column;
     width: 100%;
   }
-  .nav-bar__logo {
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: $logo-f;
-    color: $font-c;
-    font-weight: 700;
-    font-size: 40px;
-    margin-bottom: 24px;
-    text-align: center;
-  }
   .nav-bar__menu {
-    width: 100%;
-  }
-  .nav-bar__login-btn {
     width: 100%;
   }
   .nav-bar__menu-icon,

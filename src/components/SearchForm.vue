@@ -14,16 +14,13 @@
         prepend-inner-icon="mdi-magnify"
       />
     </div>
-    <PrimaryBtn title="Search"/>
   </v-form>
 </template>
 
 <script>
-import PrimaryBtn from '@/components/PrimaryBtn.vue';
 
 export default {
   name: 'SearchForm',
-  components: { PrimaryBtn },
   data() {
     return {
     };

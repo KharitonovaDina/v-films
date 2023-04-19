@@ -34,8 +34,8 @@ export default {
   }
   .hero-card__img-wrap {
     position: relative;
-    width: inherit;
-    height: inherit;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     &:before {
       content: "";

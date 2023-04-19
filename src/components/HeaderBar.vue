@@ -7,10 +7,13 @@
     color="transparent"
   >
     <div class="header__wrap">
+      <router-link
+        class="header__logo"
+        to="/"
+      >
+        Filmoteka
+      </router-link>
       <SearchForm/>
-      <v-btn class="header__notification" icon>
-        <v-icon class="header__icon">mdi-bell</v-icon>
-      </v-btn>
     </div>
   </v-app-bar>
 </template>
@@ -35,12 +38,14 @@ export default {
     width: 100%;
     height: 100%;
   }
-  .header__notification {
-    & .header__icon {
-      color: $font-c;
-    }
-    &:hover .header__icon{
-      color: $primary-c;
-    }
+  .header__logo {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: $logo-f;
+    color: $font-c;
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 24px;
+    text-align: center;
   }
 </style>

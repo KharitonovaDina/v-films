@@ -5,6 +5,17 @@
     tag="aside"
     right
     width="400">
+    <div class="watch-list__user">
+      <UserCard
+        v-if="auth"
+        v-on:logout="logout"
+      />
+      <PrimaryBtn
+        v-else class="watch-list__login-btn"
+        title="Login"
+        v-on:login="login"
+      />
+    </div>
     <h3 class="watch-list__title">Watch List</h3>
     <v-list>
       <v-list-item
@@ -13,6 +24,7 @@
         class="watch-list__episode"
       >
         <EpisodeCard
+          v-on:delete="deleteEpisode(i)"
           :value="item"
         />
       </v-list-item>
@@ -23,13 +35,15 @@
 
 <script>
 import EpisodeCard from '@/components/EpisodeCard.vue';
-// import PrimaryBtn from '@/components/PrimaryBtn.vue';
+import UserCard from '@/components/UserCard.vue';
+import PrimaryBtn from '@/components/PrimaryBtn.vue';
 
 export default {
   name: 'WatchList',
   components: {
+    UserCard,
     EpisodeCard,
-    // PrimaryBtn,
+    PrimaryBtn,
   },
   data() {
     return {
@@ -39,53 +53,71 @@ export default {
           series: 'Supernatural',
           season: '01',
           episode: '03',
-          title: 'Utopia',
+          title: 'Utopia1',
         },
         {
           poster: 'tmp-7.jpg',
           series: 'Doctor no who?',
           season: '01',
           episode: '03',
-          title: 'Utopia',
+          title: 'Utopia2',
         },
         {
           poster: 'tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',
-          title: 'Utopia',
+          title: 'Utopia3',
         },
         {
           poster: 'tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',
-          title: 'Utopia',
+          title: 'Utopia4',
         },
         {
           poster: 'tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',
-          title: 'Utopia',
+          title: 'Utopia5',
         },
         {
           poster: 'tmp-7.jpg',
           series: 'Doctor who?',
           season: '01',
           episode: '03',
-          title: 'Utopia',
+          title: 'Utopia6',
         },
       ],
+      auth: true,
     };
+  },
+  methods: {
+    deleteEpisode(i) {
+      this.cards.splice(i, 1);
+    },
+    logout() {
+      this.auth = false;
+    },
+    login() {
+      this.auth = true;
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
   .watch-list {
-    padding: 16px;
+    padding: 32px 16px;
     background-color: $sidebar-c;
+  }
+  .watch-list__user {
+    margin-bottom: 32px;
+  }
+  .watch-list__login-btn {
+    width: 100%;
   }
   .watch-list__title {
     margin-bottom: 16px;

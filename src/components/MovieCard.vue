@@ -85,6 +85,7 @@ export default {
     font-size: 18px;
     margin-bottom: 16px;
     color: $font-c;
+    align-items: end;
   }
   .movie-card__rating-wrap {
     display: flex;

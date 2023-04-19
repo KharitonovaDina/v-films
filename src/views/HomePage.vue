@@ -1,8 +1,11 @@
 <template>
   <v-container class="home">
     <HeroSlider class="home__hero-slider"/>
-    <MovieSlider title="Continue watch"/>
-    <MovieSlider title="Continue"/>
+    <MovieSlider title="Watch now"/>
+    <MovieSlider title="Didn't watch"/>
+    <MovieSlider title="Expected"/>
+    <MovieSlider title="Viewed"/>
+    <MovieSlider title="Viewing stopped"/>
   </v-container>
 </template>
 

@@ -12,7 +12,7 @@
           </v-card-text>
           <v-card-text class="reset"> {{value.title}} </v-card-text>
         </div>
-        <v-btn small fab outlined class="episode-card__btn">
+        <v-btn @click="$emit('delete')" small fab outlined class="episode-card__btn">
           <v-icon>mdi-check</v-icon>
         </v-btn>
       </div>

@@ -1,5 +1,9 @@
 <template>
-  <v-btn depressed class="primary-btn">
+  <v-btn
+    depressed
+    class="primary-btn"
+    @click="$emit('login')"
+  >
     {{ title }}
   </v-btn>
 </template>

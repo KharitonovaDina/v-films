@@ -7,18 +7,20 @@
         :key="i"
         class="movie-slider__item"
       >
-        <MovieCard :value="item"/>
+<!--        <MovieCard :value="item"/>-->
+        <SerialCard :value="item" />
       </v-slide-item>
     </v-slide-group>
   </v-container>
 </template>
 
 <script>
-import MovieCard from '@/components/MovieCard.vue';
+// import MovieCard from '@/components/MovieCard.vue';
+import SerialCard from '@/components/SerialCard.vue';
 
 export default {
   name: 'MovieSlider',
-  components: { MovieCard },
+  components: { SerialCard },
   props: ['title'],
   data() {
     return {
@@ -27,36 +29,49 @@ export default {
           poster: 'tmp-4.jpg',
           title: 'Game of thrones',
           rating: '7.8',
+          status: 'Watch now',
         },
         {
           poster: 'tmp-4.jpg',
           title: 'Game of thrones',
           rating: '7.9',
+          status: 'Watch now',
         },
         {
           poster: 'tmp-4.jpg',
           title: 'Game of thrones',
           rating: '8.0',
+          status: 'Watch now',
         },
         {
           poster: 'tmp-4.jpg',
           title: 'Game of thrones',
           rating: '8.1',
+          status: 'Watch now',
         },
         {
           poster: 'tmp-4.jpg',
           title: 'Game of thrones',
           rating: '8.2',
+          status: 'Watch now',
         },
         {
           poster: 'tmp-4.jpg',
           title: 'Game of thrones',
           rating: '8.3',
+          status: 'Expected',
         },
         {
           poster: 'tmp-4.jpg',
           title: 'Game of thrones',
           rating: '8.4',
+          status: 'Expected',
+        },
+        {
+          poster: 'tmp-4.jpg',
+          title: 'Game of thrones',
+          rating: '8.4',
+          status: 'Expected',
         },
       ],
     };
