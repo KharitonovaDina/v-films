@@ -1,13 +1,13 @@
 <template>
-  <v-card class="serial-card">
+  <v-card class="serial-card" @click="$emit('progress')">
     <div class="serial-card__img-wrap">
       <img class="serial-card__img" :src="require(`@/assets/img/tmp/${value.poster}`)" alt="">
     </div>
     <v-progress-linear
       bottom
       absolute
-      value="15"
       height="5"
+      :value=value.progress
       color="red"
     />
   </v-card>
@@ -27,7 +27,7 @@ export default {
     justify-content: space-between;
     flex-direction: column;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: 8px;
     border: none;
     width: 210px;
     height: 297px;
@@ -49,8 +49,4 @@ export default {
     width: 100%;
     height: auto;
   }
-  //.serial-card__progress {
-  //  background-color: red;
-  //  color: #1E1717;
-  //}
 </style>

@@ -1,21 +1,19 @@
 <template>
   <v-container class="home">
     <HeroSlider class="home__hero-slider"/>
-    <MovieSlider title="Watch now"/>
-    <MovieSlider title="Didn't watch"/>
-    <MovieSlider title="Expected"/>
-    <MovieSlider title="Viewed"/>
-    <MovieSlider title="Viewing stopped"/>
+    <Slider title="Watch now" arr="Watch now"/>
+    <Slider title="Didn't watch" arr="To be continued"/>
+    <Slider title="Viewed" arr="Done"/>
   </v-container>
 </template>
 
 <script>
 import HeroSlider from '@/components/HeroSlider.vue';
-import MovieSlider from '@/components/MovieSlider.vue';
+import Slider from '@/components/Slider.vue';
 
 export default {
   name: 'HomePage',
-  components: { MovieSlider, HeroSlider },
+  components: { Slider, HeroSlider },
 };
 </script>
 
