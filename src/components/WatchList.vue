@@ -10,11 +10,7 @@
         v-if="auth"
         v-on:logout="logout"
       />
-      <PrimaryBtn
-        v-else class="watch-list__login-btn"
-        title="Login"
-        v-on:login="login"
-      />
+      <LoginDialog v-else @click="$emit('login')"/>
     </div>
     <h3 class="watch-list__title">Watch List</h3>
     <v-list>
@@ -36,14 +32,15 @@
 <script>
 import EpisodeCard from '@/components/EpisodeCard.vue';
 import UserCard from '@/components/UserCard.vue';
-import PrimaryBtn from '@/components/PrimaryBtn.vue';
+// import PrimaryBtn from '@/components/PrimaryBtn.vue';
+import LoginDialog from '@/components/LoginDialog.vue';
 
 export default {
   name: 'WatchList',
   components: {
+    LoginDialog,
     UserCard,
     EpisodeCard,
-    PrimaryBtn,
   },
   data() {
     return {
@@ -115,9 +112,6 @@ export default {
   }
   .watch-list__user {
     margin-bottom: 32px;
-  }
-  .watch-list__login-btn {
-    width: 100%;
   }
   .watch-list__title {
     margin-bottom: 16px;
