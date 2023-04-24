@@ -10,7 +10,10 @@
         v-if="auth"
         v-on:logout="logout"
       />
-      <LoginDialog v-else @click="$emit('login')"/>
+      <div v-else>
+        <SignUpDialog/>
+        <LoginDialog @click="$emit('login')"/>
+      </div>
     </div>
     <h3 class="watch-list__title">Watch List</h3>
     <v-list>
@@ -34,10 +37,12 @@ import EpisodeCard from '@/components/EpisodeCard.vue';
 import UserCard from '@/components/UserCard.vue';
 // import PrimaryBtn from '@/components/PrimaryBtn.vue';
 import LoginDialog from '@/components/LoginDialog.vue';
+import SignUpDialog from '@/components/SignUpDialog.vue';
 
 export default {
   name: 'WatchList',
   components: {
+    SignUpDialog,
     LoginDialog,
     UserCard,
     EpisodeCard,
@@ -93,7 +98,9 @@ export default {
   },
   methods: {
     deleteEpisode(i) {
-      this.cards.splice(i, 1);
+      setTimeout(() => {
+        this.cards.splice(i, 1);
+      }, 1000);
     },
     logout() {
       this.auth = false;

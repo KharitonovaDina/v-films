@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss" scoped>
   .header {
-    padding: 0 24px ;
+    padding: 0 24px;
   }
   .header__wrap {
     display: flex;

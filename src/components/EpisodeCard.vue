@@ -12,7 +12,13 @@
           </v-card-text>
           <v-card-text class="reset"> {{value.title}} </v-card-text>
         </div>
-        <v-btn @click="$emit('delete')" small fab outlined class="episode-card__btn">
+        <v-btn
+          @click="$emit('delete')"
+          small
+          fab
+          outlined
+          :class="[isDone ? 'episode-card__btn_done': 'episode-card__btn']"
+        >
           <v-icon>mdi-check</v-icon>
         </v-btn>
       </div>
@@ -24,6 +30,11 @@
 export default {
   name: 'EpisodeCard',
   props: ['value'],
+  data() {
+    return {
+      isDone: false,
+    };
+  },
 };
 </script>
 
@@ -72,5 +83,10 @@ export default {
     &:hover {
       color: $primary-c;
      }
+    &_done {
+    background-color: green;
+    color: white;
+    border: none;
+    }
   }
 </style>

@@ -29,7 +29,7 @@
             :type="icon ? 'text' : 'password'"
             @click:append="icon = !icon"
           />
-          <PrimaryBtn title="Login" @click="submit" />
+          <PrimaryBtn title="Login" @click="submit" :disabled="btn"/>
         </v-form>
       </v-card-text>
     </v-card>
@@ -46,6 +46,7 @@ export default {
     return {
       dialog: false,
       text: '',
+      btn: false,
       icon: false,
       password: 'Password',
       rules: {
@@ -62,7 +63,7 @@ export default {
     submit() {
       if (this.$refs.loginForm.validate()) {
         this.dialog = false;
-        console.log('test');
+        this.btn = true;
       }
     },
   },

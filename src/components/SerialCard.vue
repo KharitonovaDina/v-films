@@ -1,7 +1,15 @@
 <template>
-  <v-card class="serial-card" @click="$emit('progress')">
+  <v-card
+    class="serial-card"
+    @click="$emit('progress')"
+    router :to="value.rout"
+  >
     <div class="serial-card__img-wrap">
-      <img class="serial-card__img" :src="require(`@/assets/img/tmp/${value.poster}`)" alt="">
+      <img
+        class="serial-card__img"
+        :src="require(`@/assets/img/tmp/${value.poster}`)"
+        alt=""
+      >
     </div>
     <v-progress-linear
       bottom

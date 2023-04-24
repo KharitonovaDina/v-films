@@ -66,7 +66,7 @@ export default {
     padding: 0;
   }
   .hero-card__description {
-    color:white;
+    color:$font-c;
     text-transform: uppercase;
     font-size: 12px;
     margin-bottom: 20px;

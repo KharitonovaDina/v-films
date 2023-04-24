@@ -23,6 +23,7 @@ export default {
       avatar: 'avatar.jpg',
       name: 'Dina Kharitonova',
       email: 'd.i.haritonova@yandex.ru',
+      password: '12345678',
     };
   },
 };

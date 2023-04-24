@@ -28,8 +28,9 @@ export default {
           poster: 'tmp-3.jpg',
           title: 'Game of thrones',
           rating: '7.8',
-          status: 'Watch now',
+          status: 'To be continued',
           progress: '25',
+          rout: '/serial',
         },
         {
           poster: 'tmp-2.jpg',
@@ -37,6 +38,7 @@ export default {
           rating: '7.9',
           status: 'Done',
           progress: '75',
+          rout: '/serial',
         },
         {
           poster: 'tmp-1.jpg',
@@ -44,13 +46,15 @@ export default {
           rating: '8.0',
           status: 'To be continued',
           progress: '95',
+          rout: '/serial',
         },
         {
           poster: 'tmp-4.jpg',
           title: 'Game of thrones',
           rating: '8.1',
-          status: 'Watch now',
+          status: 'To be continued',
           progress: '57',
+          rout: '/serial',
         },
         {
           poster: 'tmp-2.jpg',
@@ -58,13 +62,15 @@ export default {
           rating: '8.2',
           status: 'Done',
           progress: '27',
+          rout: '/serial',
         },
         {
           poster: 'tmp-3.jpg',
           title: 'Game of thrones',
           rating: '8.3',
-          status: 'Watch now',
+          status: 'To be continued',
           progress: '35',
+          rout: '/serial',
         },
         {
           poster: 'tmp-1.jpg',
@@ -72,13 +78,15 @@ export default {
           rating: '8.1',
           status: 'To be continued',
           progress: '57',
+          rout: '/serial',
         },
         {
           poster: 'tmp-3.jpg',
           title: 'Game of thrones',
           rating: '8.3',
-          status: 'Watch now',
+          status: 'To be continued',
           progress: '35',
+          rout: '/serial',
         },
         {
           poster: 'tmp-2.jpg',
@@ -86,6 +94,7 @@ export default {
           rating: '8.2',
           status: 'Done',
           progress: '27',
+          rout: '/serial',
         },
       ],
     };
@@ -102,7 +111,6 @@ export default {
       this.filteredArr[i].progress = (+(this.filteredArr[i].progress) + 10);
       if (this.filteredArr[i].progress >= 100) {
         this.filteredArr[i].status = 'Done';
-        console.log(this.filteredArr[i].status);
       }
     },
   },
