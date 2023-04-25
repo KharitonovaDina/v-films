@@ -2,18 +2,15 @@
   <v-form
     class="search-form"
   >
-    <div class="search-form__input">
-      <v-autocomplete
-        color="white"
-        hide-no-data
-        hide-selected
-        hide-details
-        label="Search"
-        solo
-        return-object
-        prepend-inner-icon="mdi-magnify"
-      />
-    </div>
+    <v-text-field
+      class="mx-4 search-form__input"
+      flat
+      hide-details
+      dark
+      label="Search"
+      prepend-inner-icon="mdi-magnify"
+      solo-inverted
+    />
   </v-form>
 </template>
 
@@ -35,8 +32,8 @@ export default {
   }
   .search-form__input {
     width: 500px;
-    height: 36px;
-    margin-right: 24px;
-    background-color: $font-c;
+    //height: 36px;
+    //margin-right: 24px;
+    //background-color: $font-c;
   }
 </style>

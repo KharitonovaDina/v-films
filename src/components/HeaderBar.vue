@@ -45,7 +45,6 @@ export default {
     color: $font-c;
     font-weight: 700;
     font-size: 40px;
-    margin-bottom: 24px;
     text-align: center;
   }
 </style>
