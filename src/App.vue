@@ -14,7 +14,12 @@ import WatchList from '@/components/WatchList.vue';
 
 export default {
   name: 'App',
-  components: { WatchList, HeaderBar },
+
+  components: {
+    WatchList,
+    HeaderBar,
+  },
+
   data: () => ({
     //
   }),

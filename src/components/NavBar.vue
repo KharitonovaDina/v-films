@@ -11,23 +11,32 @@
           <v-list-item
             v-for="item in items"
             :key="item.title"
-            router :to="item.route"
+            router
+            :to="item.route"
             class="nav-bar__menu-item"
             exact-active-class="nav-bar__menu-item_active"
           >
             <v-list-item-icon>
-              <v-icon class="nav-bar__menu-icon"> {{ item.icon }} </v-icon>
+              <v-icon class="nav-bar__menu-icon">
+                {{ item.icon }}
+              </v-icon>
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title class="nav-bar__menu-title"> {{ item.title }} </v-list-item-title>
+              <v-list-item-title class="nav-bar__menu-title">
+                {{ item.title }}
+              </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
       </div>
 
       <UserCard v-if="auth"/>
-      <PrimaryBtn v-else class="nav-bar__login-btn" title="Login"/>
+      <PrimaryBtn
+        v-else
+        class="nav-bar__login-btn"
+        title="Login"
+      />
     </div>
   </v-navigation-drawer>
 </template>
@@ -38,29 +47,30 @@ import UserCard from '@/components/UserCard.vue';
 
 export default {
   name: 'NavBar',
+
   components: { UserCard, PrimaryBtn },
-  data() {
-    return {
-      items: [
-        {
-          title: 'Home',
-          icon: 'mdi-home',
-          route: '/',
-        },
-        {
-          title: 'Films',
-          icon: 'mdi-movie',
-          route: '/films',
-        },
-        {
-          title: 'Series',
-          icon: 'mdi-video-check',
-          route: '/series',
-        },
-      ],
-      auth: true,
-    };
-  },
+
+  data: () => ({
+    items: [
+      {
+        title: 'Home',
+        icon: 'mdi-home',
+        route: '/',
+      },
+      {
+        title: 'Films',
+        icon: 'mdi-movie',
+        route: '/films',
+      },
+      {
+        title: 'Series',
+        icon: 'mdi-video-check',
+        route: '/series',
+      },
+    ],
+
+    auth: true,
+  }),
 };
 </script>
 
@@ -69,6 +79,7 @@ export default {
     padding: 16px 16px 36px;
     background-color: $sidebar-c;
   }
+
   .nav-bar__wrap {
     display: flex;
     flex-direction: column;
@@ -76,26 +87,32 @@ export default {
     align-items: center;
     height: 100%;
   }
+
   .nav-bar__inner{
     display: flex;
     flex-direction: column;
     width: 100%;
   }
+
   .nav-bar__menu {
     width: 100%;
   }
+
   .nav-bar__menu-icon,
   .nav-bar__menu-title {
     color: $font-c;
   }
+
   .nav-bar__menu-item {
     &:before {
       display: none;
     }
+
     &_active .nav-bar__menu-icon,
     &_active .nav-bar__menu-title {
       color: $primary-c;
     }
+
     &:hover .nav-bar__menu-icon,
     &:hover .nav-bar__menu-title {
       color: $primary-c;

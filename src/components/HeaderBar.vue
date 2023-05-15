@@ -23,6 +23,7 @@ import SearchForm from '@/components/SearchForm.vue';
 
 export default {
   name: 'HeaderBar',
+
   components: { SearchForm },
 };
 </script>
@@ -31,6 +32,7 @@ export default {
   .header {
     padding: 0 24px;
   }
+
   .header__wrap {
     display: flex;
     justify-content: space-between;
@@ -38,6 +40,7 @@ export default {
     width: 100%;
     height: 100%;
   }
+
   .header__logo {
     text-transform: uppercase;
     text-decoration: none;

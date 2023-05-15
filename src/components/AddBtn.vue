@@ -1,5 +1,8 @@
 <template>
-  <v-btn class="add-btn" depressed>
+  <v-btn
+    class="add-btn"
+    depressed
+  >
     <v-icon>mdi-plus</v-icon>
   </v-btn>
 </template>
@@ -18,8 +21,9 @@ export default {
     width: 36px;
     background-color: $secondary-c;
     color: $bg-c;
+
     &:hover {
       color: $primary-c;
     }
-}
+  }
 </style>

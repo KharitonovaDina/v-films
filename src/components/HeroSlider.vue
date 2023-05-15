@@ -20,28 +20,28 @@ import HeroCard from '@/components/HeroCard.vue';
 
 export default {
   name: 'HeroSlider',
+
   components: { HeroCard },
-  data() {
-    return {
-      slides: [
-        {
-          poster: 'hero.jpg',
-          title: 'Supernatural',
-          description: 'Action, horror, comedy',
-        },
-        {
-          poster: 'hero.jpg',
-          title: 'Supernatural',
-          description: 'Action, horror, comedy',
-        },
-        {
-          poster: 'hero.jpg',
-          title: 'Supernatural',
-          description: 'Action, horror, comedy',
-        },
-      ],
-    };
-  },
+
+  data: () => ({
+    slides: [
+      {
+        poster: 'hero.jpg',
+        title: 'Supernatural',
+        description: 'Action, horror, comedy',
+      },
+      {
+        poster: 'hero.jpg',
+        title: 'Supernatural',
+        description: 'Action, horror, comedy',
+      },
+      {
+        poster: 'hero.jpg',
+        title: 'Supernatural',
+        description: 'Action, horror, comedy',
+      },
+    ],
+  }),
 };
 </script>
 

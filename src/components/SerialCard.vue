@@ -2,7 +2,8 @@
   <v-card
     class="serial-card"
     @click="$emit('progress')"
-    router :to="value.rout"
+    router
+    :to="value.route"
   >
     <div class="serial-card__img-wrap">
       <img
@@ -15,7 +16,7 @@
       bottom
       absolute
       height="5"
-      :value=value.progress
+      :value="value.progress"
       color="red"
     />
   </v-card>
@@ -24,6 +25,7 @@
 <script>
 export default {
   name: 'SerialCard',
+
   props: ['value'],
 };
 </script>
@@ -40,10 +42,12 @@ export default {
     width: 210px;
     height: 297px;
   }
+
   .serial-card__img-wrap {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
     &:before {
        content: "";
        position: absolute;
@@ -53,6 +57,7 @@ export default {
        opacity: 0.2;
     }
   }
+
   .serial-card__img {
     width: 100%;
     height: auto;

@@ -2,7 +2,11 @@
   <v-container class="serial">
     <v-card class="hero">
       <div class="hero__img-wrap">
-        <img class="hero__img" src="@/assets/img/tmp/poster.jpg" alt=""/>
+        <img
+          class="hero__img"
+          src="@/assets/img/tmp/poster.jpg"
+          alt=""
+        />
       </div>
       <v-progress-linear
         height="5"
@@ -49,12 +53,12 @@
         {{ item }}
       </v-tab>
     </v-tabs>
-    <v-tabs-items v-model="tab"  class="tabs" dark>
+    <v-tabs-items v-model="tab" class="tabs" dark>
       <v-tab-item>
         <v-card>
           <v-expansion-panels accordion dark>
             <v-expansion-panel
-              v-for="(season,i) in seasons"
+              v-for="(season, i) in seasons"
               :key="i"
             >
               <div class="test">
@@ -73,7 +77,7 @@
               />
               <v-expansion-panel-content>
                 <v-card
-                  v-for="(episode,i) in season"
+                  v-for="(episode, i) in season"
                   :key="i"
                   class="ma-4"
                 >

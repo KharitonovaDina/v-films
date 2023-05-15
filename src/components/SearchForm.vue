@@ -18,10 +18,6 @@
 
 export default {
   name: 'SearchForm',
-  data() {
-    return {
-    };
-  },
 };
 </script>
 
@@ -30,10 +26,8 @@ export default {
     display: flex;
     align-items: center;
   }
+
   .search-form__input {
     width: 500px;
-    //height: 36px;
-    //margin-right: 24px;
-    //background-color: $font-c;
   }
 </style>

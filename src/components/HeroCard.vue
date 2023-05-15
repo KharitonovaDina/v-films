@@ -1,13 +1,24 @@
 <template>
   <v-card class="hero-card">
     <div class="hero-card__img-wrap">
-      <img class="hero-card__img" :src="require(`@/assets/img/tmp/${value.poster}`)" alt="">
+      <img
+        class="hero-card__img"
+        :src="require(`@/assets/img/tmp/${value.poster}`)"
+        alt=""
+      >
     </div>
     <div class="hero-card__info">
-      <v-card-title class="hero-card__title">{{ value.title }}</v-card-title>
-      <v-card-text class="hero-card__description">{{ value.description }}</v-card-text>
+      <v-card-title class="hero-card__title">
+        {{ value.title }}
+      </v-card-title>
+      <v-card-text class="hero-card__desc">
+        {{ value.description }}
+      </v-card-text>
       <div class="hero-card__btn-wrap">
-        <PrimaryBtn class="hero-card__btn" title="Watch now"/>
+        <PrimaryBtn
+          class="hero-card__btn"
+          title="Watch now"
+        />
         <AddBtn/>
       </div>
     </div>
@@ -20,7 +31,9 @@ import AddBtn from '@/components/AddBtn.vue';
 
 export default {
   name: 'HeroCard',
+
   components: { AddBtn, PrimaryBtn },
+
   props: ['value'],
 };
 </script>
@@ -32,11 +45,13 @@ export default {
     height: 100%;
     overflow: hidden;
   }
+
   .hero-card__img-wrap {
     position: relative;
     width: 100%;
     height: auto;
     object-fit: cover;
+
     &:before {
       content: "";
       position: absolute;
@@ -46,10 +61,12 @@ export default {
       opacity: 0.2;
     }
   }
+
   .hero-card__img {
     width: 100%;
     height: 100%;
   }
+
   .hero-card__info {
     position: absolute;
     display: flex;
@@ -57,6 +74,7 @@ export default {
     top: 60%;
     left: 100px;
   }
+
   .hero-card__title {
     text-transform: uppercase;
     color: white;
@@ -65,16 +83,19 @@ export default {
     margin-bottom: 12px;
     padding: 0;
   }
-  .hero-card__description {
+
+  .hero-card__desc {
     color:$font-c;
     text-transform: uppercase;
     font-size: 12px;
     margin-bottom: 20px;
     padding: 0;
   }
+
   .hero-card__btn-wrap {
     display: flex;
   }
+
   .hero-card__btn {
     margin-right: 10px;
   }

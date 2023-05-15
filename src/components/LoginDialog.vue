@@ -29,7 +29,11 @@
             :type="icon ? 'text' : 'password'"
             @click:append="icon = !icon"
           />
-          <PrimaryBtn title="Login" @click="submit" :disabled="btn"/>
+          <PrimaryBtn
+            title="Login"
+            @click="submit"
+            :disabled="btn"
+          />
         </v-form>
       </v-card-text>
     </v-card>
@@ -41,24 +45,25 @@ import PrimaryBtn from '@/components/PrimaryBtn.vue';
 
 export default {
   name: 'LoginDialog',
+
   components: { PrimaryBtn },
-  data() {
-    return {
-      dialog: false,
-      text: '',
-      btn: false,
-      icon: false,
-      password: 'Password',
-      rules: {
-        required: (value) => !!value || 'Required.',
-        email: (value) => {
-          const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          return pattern.test(value) || 'Invalid e-mail.';
-        },
-        min: (v) => v.length >= 8 || 'Min 8 characters',
+
+  data: () => ({
+    dialog: false,
+    text: '',
+    btn: false,
+    icon: false,
+    password: 'Password',
+    rules: {
+      required: (value) => !!value || 'Required.',
+      email: (value) => {
+        const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return pattern.test(value) || 'Invalid e-mail.';
       },
-    };
-  },
+      min: (v) => v.length >= 8 || 'Min 8 characters',
+    },
+  }),
+
   methods: {
     submit() {
       if (this.$refs.loginForm.validate()) {

@@ -14,7 +14,7 @@
       </v-btn>
     </template>
     <v-card>
-      <v-card-title> Sign up </v-card-title>
+      <v-card-title>Sign up</v-card-title>
       <v-card-text>
         <v-form ref="signUpForm">
           <v-text-field
@@ -48,14 +48,14 @@ import PrimaryBtn from '@/components/PrimaryBtn.vue';
 
 export default {
   name: 'SignUpDialog',
+
   components: { PrimaryBtn },
-  data() {
-    return {
-      dialog: false,
-      icon: false,
-      icon2: false,
-    };
-  },
+
+  data: () => ({
+    dialog: false,
+    icon: false,
+    icon2: false,
+  }),
 };
 </script>
 
