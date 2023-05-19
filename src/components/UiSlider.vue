@@ -29,85 +29,14 @@ export default {
   props: ['title', 'arr'],
 
   data: () => ({
-    movies: [
-      {
-        poster: 'tmp-3.jpg',
-        title: 'Game of thrones',
-        rating: '7.8',
-        status: 'To be continued',
-        progress: '25',
-        route: '/serial',
-      },
-      {
-        poster: 'tmp-2.jpg',
-        title: 'Game of thrones',
-        rating: '7.9',
-        status: 'Done',
-        progress: '75',
-        route: '/serial',
-      },
-      {
-        poster: 'tmp-1.jpg',
-        title: 'Game of thrones',
-        rating: '8.0',
-        status: 'To be continued',
-        progress: '95',
-        route: '/serial',
-      },
-      {
-        poster: 'tmp-4.jpg',
-        title: 'Game of thrones',
-        rating: '8.1',
-        status: 'To be continued',
-        progress: '57',
-        route: '/serial',
-      },
-      {
-        poster: 'tmp-2.jpg',
-        title: 'Game of thrones',
-        rating: '8.2',
-        status: 'Done',
-        progress: '27',
-        route: '/serial',
-      },
-      {
-        poster: 'tmp-3.jpg',
-        title: 'Game of thrones',
-        rating: '8.3',
-        status: 'To be continued',
-        progress: '35',
-        route: '/serial',
-      },
-      {
-        poster: 'tmp-1.jpg',
-        title: 'Game of thrones',
-        rating: '8.1',
-        status: 'To be continued',
-        progress: '57',
-        route: '/serial',
-      },
-      {
-        poster: 'tmp-3.jpg',
-        title: 'Game of thrones',
-        rating: '8.3',
-        status: 'To be continued',
-        progress: '35',
-        route: '/serial',
-      },
-      {
-        poster: 'tmp-2.jpg',
-        title: 'Game of thrones',
-        rating: '8.2',
-        status: 'Done',
-        progress: '27',
-        route: '/serial',
-      },
-    ],
   }),
 
   computed: {
     filteredArr() {
       return this.movies.filter((movie) => (movie.status === this.arr));
+    },
+    movies() {
+      return this.$store.state.movies;
     },
   },
 };

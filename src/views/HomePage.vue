@@ -13,6 +13,7 @@
       title="Viewed"
       arr="Done"
     />
+    <span>{{ status }}</span>
   </v-container>
 </template>
 
@@ -26,6 +27,12 @@ export default {
   components: {
     UiSlider,
     HeroSlider,
+  },
+
+  computed: {
+    status() {
+      return this.$store.getters.watchNow;
+    },
   },
 };
 </script>

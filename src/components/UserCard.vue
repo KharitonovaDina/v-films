@@ -6,16 +6,16 @@
     <div class="user-card__wrap">
       <v-avatar class="user-card__avatar">
         <img
-          :src="require(`@/assets/img/tmp/${avatar}`)"
+          :src="require(`@/assets/img/tmp/${this.$store.state.user.avatar}`)"
           alt="avatar"
         >
       </v-avatar>
       <div>
         <v-card-text class="user-card__name">
-          {{ name }}
+          {{ this.$store.state.user.userName }}
         </v-card-text>
         <v-card-text class="user-card__email">
-          {{ email }}
+          {{ this.$store.state.user.email }}
         </v-card-text>
       </div>
     </div>
@@ -32,13 +32,6 @@
 <script>
 export default {
   name: 'UserCard',
-
-  data: () => ({
-    avatar: 'avatar.jpg',
-    name: 'Dina Kharitonova',
-    email: 'd.i.haritonova@yandex.ru',
-    password: '12345678',
-  }),
 };
 </script>
 
