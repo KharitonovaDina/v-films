@@ -34,6 +34,10 @@ export default {
       return this.$store.getters.watchNow;
     },
   },
+  // async await
+  // created() {
+  //   this.$store.dispatch('fetchUser');
+  // },
 };
 </script>
 

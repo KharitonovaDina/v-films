@@ -6,32 +6,67 @@
     <div class="user-card__wrap">
       <v-avatar class="user-card__avatar">
         <img
-          :src="require(`@/assets/img/tmp/${this.$store.state.user.avatar}`)"
+          v-if="user.avatar"
+          :src="require(`@/assets/img/tmp/${user.avatar}`)"
           alt="avatar"
         >
       </v-avatar>
       <div>
         <v-card-text class="user-card__name">
-          {{ this.$store.state.user.userName }}
+          {{ user.userName }}
         </v-card-text>
         <v-card-text class="user-card__email">
-          {{ this.$store.state.user.email }}
+          {{ user.email }}
         </v-card-text>
       </div>
     </div>
-    <v-btn
-      class="user-card__logout-btn"
-      icon
-      @click="$emit('logout')"
-    >
-      <v-icon class="user-card__btn-icon">mdi-dots-vertical</v-icon>
-    </v-btn>
+    <v-menu offset-y>
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn
+          class="user-card__logout-btn"
+          icon
+          v-bind="attrs"
+          v-on="on"
+        >
+          <v-icon class="user-card__btn-icon">mdi-dots-vertical</v-icon>
+        </v-btn>
+      </template>
+      <v-list>
+        <v-list-item
+          v-for="(item, index) in items"
+          :key="index"
+          router
+          :to="item.route"
+        >
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <router-link to="/profile" @click="$emit('logout')"></router-link>
+        </v-list-item>
+      </v-list>
+    </v-menu>
+
   </v-card>
 </template>
 
 <script>
 export default {
   name: 'UserCard',
+  data: () => ({
+    items: [
+      {
+        title: 'Profile',
+        route: '/profile',
+      },
+      {
+        title: 'Logout',
+        route: '/',
+      }],
+  }),
+
+  computed: {
+    user() {
+      return this.$store.getters.getUser;
+    },
+  },
 };
 </script>
 

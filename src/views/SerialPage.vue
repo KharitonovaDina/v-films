@@ -136,59 +136,57 @@ import PrimaryBtn from '@/components/PrimaryBtn.vue';
 export default {
   name: 'SerialPage',
   components: { PrimaryBtn },
-  data() {
-    return {
-      tab: null,
-      items: ['Seasons', 'Details'],
-      seasons: [
-        [
-          {
-            number: '1',
-            poster: 'tmp-7',
-            title: 'Utopia',
-          },
-          {
-            number: '2',
-            poster: 'tmp-7',
-            title: 'Utopia',
-          },
-          {
-            number: '3',
-            poster: 'tmp-7',
-            title: 'Utopia',
-          },
-          {
-            number: '4',
-            poster: 'tmp-7',
-            title: 'Utopia',
-          },
-        ],
-        [
-          {
-            number: '1',
-            poster: 'tmp-7',
-            title: 'Next',
-          },
-          {
-            number: '2',
-            poster: 'tmp-7',
-            title: 'Next',
-          },
-          {
-            number: '3',
-            poster: 'tmp-7',
-            title: 'Next',
-          },
-          {
-            number: '4',
-            poster: 'tmp-7',
-            title: 'Next',
-          },
-        ],
+  data: () => ({
+    tab: null,
+    items: ['Seasons', 'Details'],
+    seasons: [
+      [
+        {
+          number: '1',
+          poster: 'tmp-7',
+          title: 'Utopia',
+        },
+        {
+          number: '2',
+          poster: 'tmp-7',
+          title: 'Utopia',
+        },
+        {
+          number: '3',
+          poster: 'tmp-7',
+          title: 'Utopia',
+        },
+        {
+          number: '4',
+          poster: 'tmp-7',
+          title: 'Utopia',
+        },
       ],
-      episodes: 7,
-    };
-  },
+      [
+        {
+          number: '1',
+          poster: 'tmp-7',
+          title: 'Next',
+        },
+        {
+          number: '2',
+          poster: 'tmp-7',
+          title: 'Next',
+        },
+        {
+          number: '3',
+          poster: 'tmp-7',
+          title: 'Next',
+        },
+        {
+          number: '4',
+          poster: 'tmp-7',
+          title: 'Next',
+        },
+      ],
+    ],
+    episodes: 7,
+  }),
 
   methods: {
     count() {

@@ -71,12 +71,7 @@ export default new Vuex.Store({
       //   route: '/serial',
       // },
     ],
-    user: {
-      userName: 'Dina',
-      email: 'd.i.haritonova@yandex.ru',
-      avatar: 'avatar.jpg',
-      password: '123456',
-    },
+    user: {},
   },
   getters: {
     watched: (state) => state.movies.filter((movie) => movie.watchValue === 100),
@@ -84,16 +79,52 @@ export default new Vuex.Store({
     watchNow: (state) => (
       state.movies.filter((movie) => movie.watchValue < 100 && movie.watchValue > 0)
     ),
+    getUser: (state) => state.user,
   },
   mutations: {
-  },
-  actions: {
-    incrementAsync({ commit }) {
-      setTimeout(() => {
-        commit('increment');
-      }, 1000);
+    setUser(state, payload) {
+      state.user = payload;
     },
   },
+  actions: {
+    async fetchUser({ commit }) {
+      const result = await fetch('http://localhost:3000/api/users/6');
+      const user = await result.json();
+      commit('setUser', {
+        email: user.email,
+        userName: user.user_name,
+        avatar: user.avatar,
+        password: user.password,
+        userId: user.user_id,
+      });
+    },
+
+    async addUser({ commit }, payload) {
+      const response = (await fetch('http://localhost:3000/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: payload,
+      })).json();
+      commit('setUser', response);
+    },
+
+    async deleteUser({ commit }) {
+      const response = (await fetch(' http://localhost:3000/api/users/9', {
+        method: 'DELETE',
+      })).json();
+      commit('setUser', response);
+    },
+  },
+
+  // const arr = [];
+  //
+  // const newArr = arr.map((item) => {
+  //   return {
+  //     sdfs: item.sdfsd,
+  //   };
+  // });
   modules: {
   },
 });
